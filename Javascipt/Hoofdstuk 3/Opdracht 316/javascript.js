@@ -3,7 +3,7 @@ document.write("<p>De eerste leerling is <strong>");
 document.write(leerlingen[0] + "</strong></p>"); 
 
 document.write("<p>De laatste leerling is <strong>");
-document.write(leerlingen[4] + "</strong></p>"); 
+document.write(leerlingen[leerlingen.length - 1] + "</strong></p>"); 
 
 document.write("<p>De tweede leerling is <strong>");
 document.write(leerlingen[1] + "</strong></p>"); 

@@ -1,28 +1,28 @@
 var score = 0;
 console.log(score); // 0
 
-var score = 100;
+score = 100;
 console.log(score); // 100
 
-var score = score - 10;
+score - 10;
 console.log(score); // 90
 
-var score = score * 10;
+score * 10;
 console.log(score); // 900
 
-var score = score++;
+score++;
 console.log(score); // 900
 
-var score = score++;
+score++;
 console.log(score); // 900
 
-var score = score += 5;
+score += 5;
 console.log(score); // 905
 
-var score = score -= 10;
+score -= 10;
 console.log(score); // 895
 
-var score = score--;
+score--;
 console.log(score); // 895
 
 var score = score + 'sok';
