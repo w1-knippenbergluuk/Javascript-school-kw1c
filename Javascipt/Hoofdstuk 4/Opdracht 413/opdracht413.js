@@ -1,5 +1,5 @@
 //globale variable lijst voor een array met getallen
-var lijst = [22,33,9];
+var lijst = [];
 var totaal = 0;
 /*
 *  functie getGetal haalt het getal op in de div met id getal
@@ -19,6 +19,7 @@ function getGetal() {
 *  geen return waardes
 */
 function add() {
+    checkUnique();
 	getal = getGetal();
 	if (isNaN(getal)) {
 		return;
@@ -74,17 +75,20 @@ function deleteLast() {
 var text = ''
 
 function sum() {
+    var totaal = 0;
+for (i=0;i<lijst.length;i++){
+    totaal = totaal + lijst[i];
+}
 
-$.each(lijst,function() {
-    totaal += this;
-});
 document.getElementById('resultaat').innerHTML = totaal;
 }
 
 function average() {
-    $.each(lijst,function() {
-    totaal += this;
-});
+    totaal = 0;
+for (i=0;i<lijst.length;i++){
+    totaal = totaal + lijst[i];
+}
+
 var gemiddelde = totaal / lijst.length;
 document.getElementById('resultaat').innerHTML = gemiddelde;
 
@@ -94,3 +98,19 @@ $(document).ready(function() {
 	printLijst();
 });
 
+
+function checkUnique(){
+    var uniek = [];
+    for (i=0; i < lijst.length; i++){
+        var gevonden = false;
+        for (x=0; x < uniek.length; x++){
+            if (lijst[i] == uniek[x]){
+                gevonden = true;
+                alert('test');
+            }
+        }   
+        if (gevonden == false){
+            uniek.push(lijst[i]);
+        }
+    }
+}
