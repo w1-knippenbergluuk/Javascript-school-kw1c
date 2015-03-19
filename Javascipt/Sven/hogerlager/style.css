@@ -1,0 +1,71 @@
+
+#main {
+    height: 500px;
+    width: 700px;
+    background-color:  #1bb1c0;
+    border:  2px solid black;
+
+}
+ 
+h1 {
+    margin-top: 5px;
+    letter-spacing:  2px;
+}
+#asd {
+    background-color: #fb0;
+    color: #fff;
+    height: 50px;
+    width: 600px;
+    margin: 0 auto;
+    text-align: center;
+    border: 3px solid black;
+    margin-top: 20px;
+}
+
+#invoergetal {
+    background-color: #0d5fd0;
+    width:  600px;
+    height:  25px;
+    margin: auto;
+    
+}
+
+h2 {
+    margin-left: 45px;
+
+}
+
+#textding {
+    background-color:  #0d5fd0;
+    width:  600px;
+    height:  35px;
+    color:  #fff;
+    text-align: center;
+}
+
+#controleergetal {
+    
+     width: 180px;
+    height: 30px;
+    background-color:  #0d5fd0;
+    color:  #fff;
+    margin: auto;
+    margin-top: 50px;
+    margin-left: 250px;
+    
+    
+}
+
+#pogingbox {
+    background-color: #0d5fd0;
+    width:  600px;
+    height:  35px;
+    margin: auto;
+    margin-top:  40px;
+    border: 2px solid black;
+    color:  #fff;
+    text-align: center;
+    
+    
+}
+

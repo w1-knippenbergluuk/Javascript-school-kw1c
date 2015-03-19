@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title></title>
+        <script>
+            var tekst = 'De bossche burgemeester Ton Rombouts geneert zich voor de wijze waarop toeschouwers Jozy Altidore hebben bejengend tijdens de wedstrijd van FC Den Bosch. Dat laat hij weten in een persoonlijke brief aan de AZ-speler.';
+
+
+
+
+
+
+
+
+            var zin1 = 'De bossche burgemeester Ton Rombouts geneert zich voor de wijze waarop toeschouwers Jozy Altidore hebben bejengend tijdens de wedstrijd van FC Den Bosch.'
+            var zin2 = 'Dat laat hij weten in een persoonlijke brief aan de AZ-speler. <br>'
+
+            var zin1 = zin1.replace("Ton Rombouts", "");
+            var zin1 = zin1.replace("Bossche", "BOSSCHE");
+            var zin1 = zin1.replace("Jozy Altidore", "de AZ-speler");
+            var zin1 = zin1.replace("de AZ-speler", "de voetballer");
+            var zin2 = zin2.replace("Dat", "Het volgende");
+            var zin2 = zin2.replace("de AZ-speler", "de voetballer");
+            document.write(zin2, zin1);
+
+        </script>
+    </head>
+    <body>
+        
+    </body>
+</html>
