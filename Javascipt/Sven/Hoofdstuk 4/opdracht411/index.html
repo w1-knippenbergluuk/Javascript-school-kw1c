@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title></title>
+        <link href="style.css" rel="stylesheet">
+    <script src="opdracht411.js" type="text/javascript"></script>
+    </head>
+    <body> 
+        <div id="form">
+            <table>
+                <tr>
+                    <td>
+                        Functieniveau programmeur:
+                    </td>
+                    <td>
+                        <select name="opleiding" id="opleiding" form="carform">
+                          <option value="MBO">MBO</option>
+                          <option value="HBO">HBO</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Hoeveel jaar werkervaring heb je?: 
+                    </td>
+                    <td>
+                        <input type="number" id="jaar" name="jaar"><br>
+                    </td>       
+                </tr>
+            </table>
+            <button name="bereken" type="button" onclick="bereken();">Bereken</button>
+        </div>
+        <div id="resultaat">
+        
+        </div> 
+    </body>
+</html>
