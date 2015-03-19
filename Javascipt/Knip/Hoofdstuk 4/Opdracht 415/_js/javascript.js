@@ -49,6 +49,35 @@ function namenTonen(){
  }
 }
 
+function kortsteNaam()  {
+    var lgth = 0;
+    var kortste;
+
+for(var i=0; i < klas.length; i++){
+    if(klas[i].length > lgth){
+        var lgth = klas[i].length;
+        kortste = klas[i];
+    }      
+} 
+alert(kortste);
+}
+
+function langsteNaam()  {
+    var lgth = 0;
+    var langste;
+
+for(var i=0; i < klas.length; i++){
+    if(klas[i].length > lgth){
+        var lgth = klas[i].length;
+        langste = klas[i];
+    }      
+} 
+alert(langste);
+}
+
+
+
+alert(longest);
 function reset() {
 
 }
