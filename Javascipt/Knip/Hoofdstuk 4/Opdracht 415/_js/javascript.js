@@ -50,16 +50,16 @@ function namenTonen(){
 }
 
 function kortsteNaam()  {
-    var lgth = 0;
-    var kortste;
+    var lgth = 100;
+    var kortste = 100;
 
-for(var i=0; i < klas.length; i++){
-    if(klas[i].length > lgth){
-        var lgth = klas[i].length;
-        kortste = klas[i];
+for(var a=0; a < klas.length; a++){
+    if(klas[a].length < lgth){
+        var lgth = klas[a].length;
+        kortste = klas[a];
     }      
 } 
-alert(kortste);
+document.getElementById('stopwatch').innerHTML = kortste + " <br />";
 }
 
 function langsteNaam()  {
@@ -72,12 +72,17 @@ for(var i=0; i < klas.length; i++){
         langste = klas[i];
     }      
 } 
-alert(langste);
+document.getElementById('stopwatch').innerHTML = langste + " <br />";
+}
+
+function search(){
+    var getalElement = document.getElementById('search');
+    var searchValue = getalElement.value;
+
+ 
 }
 
 
-
-alert(longest);
 function reset() {
 
 }
