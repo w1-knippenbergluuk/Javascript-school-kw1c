@@ -16,11 +16,12 @@
             <div id="invoerveld">
                 Vul hier uw getal in:
                 <form>
-                    <input id="input" name="input" size="3" type="number" value="0" maxlength="10">
+                    <input id="input" name="input" size="3" type="text" value="0" maxlength="10" autocomplete="off">
                 </form>
             </div>
             <div id="buttonDiv">
                 <button name="bereken" type="button" id="button" onclick="bereken();">Bereken</button>
+                <button name="bereken" type="button" id="restartButton" onclick="restart();">Start nieuw spel</button>
             </div>
             <div id="voortgang">
             </div>
@@ -28,6 +29,11 @@
             <h1>SCORE</h1> 
                 <div id="scoreUitslag">
                      
+                </div>
+            </div>
+            <div id="footer">
+                <div id="footerContent">
+                     Dit spel is gemaakt door Luuk Knippenberg
                 </div>
             </div>
         </div>
