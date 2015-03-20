@@ -16,12 +16,18 @@ function bereken(){
         }   else{
                 document.getElementById('voortgang').innerHTML = 'Poging ' + pogingen.length + ' - Je hebt het geraden!';
                 berekenScore();
+                document.getElementById('button').style.visibility = "hidden";
+                document.getElementById('restartButton').style.visibility = "visible";
         }
     }
     
 }
 
 function berekenScore(){
-    var uitslag = 1000 - (pogingen.length * 50);
+    var uitslag = 1050 - (pogingen.length * 50);
     document.getElementById('scoreUitslag').innerHTML += '<h1>' + uitslag + '</h1>';
+   }
+
+function restart(){
+    location.reload();
    }
