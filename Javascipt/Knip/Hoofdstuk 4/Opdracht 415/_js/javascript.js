@@ -79,7 +79,9 @@ function search(){
     var getalElement = document.getElementById('search');
     var searchValue = getalElement.value;
 
- 
+    for(i=0; i<klas.length; i++){
+        
+    }
 }
 
 
