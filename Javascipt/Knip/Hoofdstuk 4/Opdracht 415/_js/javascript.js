@@ -75,12 +75,21 @@ for(var i=0; i < klas.length; i++){
 document.getElementById('stopwatch').innerHTML = langste + " <br />";
 }
 
-function search(){
+    
+    
+    
+
+function searchButton(){
     var getalElement = document.getElementById('search');
     var searchValue = getalElement.value;
-
+    
     for(i=0; i<klas.length; i++){
-        
+        var searchIndexNumber = klas[i].indexOf(searchValue);
+        if(searchIndexNumber > -1){
+            var naam = klas[i];
+            console.log(searchIndexNumber);
+            document.getElementById('stopwatch').innerHTML += naam + '<br />';
+        }
     }
 }
 
