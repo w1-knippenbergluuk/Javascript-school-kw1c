@@ -5,36 +5,7 @@
 <title>Javascript &amp; jQuery opdrachten</title>
 <link href="_css/site.css" rel="stylesheet">
 <script src="_js/jquery-1.7.2.min.js"></script>
-<script>
-var zin;
-function getZin() {
-	zin = $('#langezin').html();
-}
-
-function setZin(anderezin) {
-	$('#langezin').html(anderezin);
-}
-
-function keerZinOm() {
-	var omgekeerdezin = '';
-	for (var x=0; x<zin.length; x++) {
-		omgekeerdezin =  zin.substr(x,1) + omgekeerdezin;
-	}
-	setZin(omgekeerdezin);
-	getZin();
-}
-
-function zoekLetter() {
-
-
-
-}
-
-$(document).ready(function() {
-	getZin();
-});
-
-</script>
+<script src="_js/javascript.js"></script>
 </head>
 <body>
 <div class="wrapper">
@@ -65,7 +36,7 @@ $(document).ready(function() {
 			Programmeer de functie zoekLetter. Deze functie zoekt de letter die is ingevuld in onderstaande invoerveld in de bovenstaande zin en geeft weer op welke posities en hoevaak deze letter daarin voorkomt. Geef met alert() de posities en het aantal aan.
 		</p>
 		<p>
-				<input  size="1" maxlength="1" type="text" name="letter" >&nbsp;
+				<input id="search" size="1" maxlength="1" type="text" name="letter" >&nbsp;
                 <input type="button" value="Zoek letter" onclick="zoekLetter();">
 		</p>
 
