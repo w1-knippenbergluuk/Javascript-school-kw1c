@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Javascript &amp; jQuery opdrachten</title>
+<link href="_css/site.css" rel="stylesheet">
+<style>
+        #myCanvas {
+                padding: 0;
+                width: 300px;
+                height: 300px;
+                background:  #dddddd;
+        }
+        .raadme {
+                letter-spacing: 0.1em;
+                line-height: 1.5em;
+                background: white;
+                color: #000;
+                margin-left: 0.1em;
+                padding:  0.2em;
+        }
+        .ix {
+                position: relative;
+                top: 1.5em;
+                left: -.2em;
+                color: white;
+        }
+        button
+        {
+        display: block;
+        font-size: 1.1em;
+        font-weight: bold;
+        text-transform: uppercase;
+        padding: 10px 15px;
+        margin: 20px auto;
+        color: #ccc;
+        background-color: #555;
+        background: -webkit-linear-gradient(#888, #555);
+        background: linear-gradient(#888, #555);
+        border: 0 none;
+        border-radius: 3px;
+        text-shadow: 0 -1px 0 #000;
+        box-shadow: 0 1px 0 #666, 0 5px 0 #444, 0 6px 6px rgba(0,0,0,0.6);
+        cursor: pointer;
+        -webkit-transition: all 150ms ease;
+        transition: all 150ms ease;
+        }
+
+button:hover, button:focus
+        {
+        -webkit-animation: pulsate 1.2s linear infinite;
+        animation: pulsate 1.2s linear infinite;
+        }
+        
+@-webkit-keyframes pulsate
+        {
+        0%   { color: #ddd; text-shadow: 0 -1px 0 #000; }
+        50%  { color: #fff; text-shadow: 0 -1px 0 #444, 0 0 5px #ffd, 0 0 8px #fff; }
+        100% { color: #ddd; text-shadow: 0 -1px 0 #000; }
+        }
+                
+@keyframes pulsate
+        {
+        0%   { color: #ddd; text-shadow: 0 -1px 0 #000; }
+        50%  { color: #fff; text-shadow: 0 -1px 0 #444, 0 0 5px #ffd, 0 0 8px #fff; }
+        100% { color: #ddd; text-shadow: 0 -1px 0 #000; }
+        }
+
+button:active
+        {
+        color: #fff;
+        text-shadow: 0 -1px 0 #444, 0 0 5px #ffd, 0 0 8px #fff;
+        box-shadow: 0 1px 0 #666, 0 2px 0 #444, 0 2px 2px rgba(0,0,0,0.9);
+        -webkit-transform: translateY(3px);
+        transform: translateY(3px);
+        -webkit-animation: none;
+        animation: none;
+        }
+        
+button.letter {
+        font-size: 80%;
+        font-weight: normal;
+        text-transform: lowercase;
+        float: left;
+        margin-left: 0.2em;
+}
+    
+.content {
+        max-width:  1040px;
+    }
+</style>
+<script src="_js/jquery-1.7.2.min.js"></script>
+<script src="galgje.js"></script>
+<script>
+
+var stap = 0;
+$(document).ready(function() {
+        animatie();
+});
+
+// 2 hoofdvariabelen voor het hele spel
+// var teRadenWoord is het woord dat geraden moet worden dus bijvoobeeld 'fietspomp'
+// var geradenWoord is het woord waarin de geraden letters staan: bijvoorbeeld '..e..po.p';
+var teRadenWoord = "";
+var geradenWoordNu = "";
+/* 
+* Deze functie wordt aangeroepen als je op start spel klikt
+* Geen parameters of return waarde
+*/
+function galgje() {
+        alert('De functie galgje() wordt nu aangeroepen..');
+        
+        teRadenWoord = kiesRandomWoord();
+        alert( 'Een willekeurig woord is bijvoorbeeld ' + teRadenWoord );
+        
+        printDeLegeVakjes();
+        printHetAlfabet();
+        initialiseerSpel();
+}
+
+/*
+* Deze functie kiest voor jou een random/willekeurig woord uit de globale variabele woorden (zie galgje.js)
+* Geen parameters
+* @return een random woord 
+*/
+function kiesRandomWoord() {
+        var eengetal = Math.floor((Math.random()*woorden.length));
+        var randomWoord = woorden[eengetal];
+        return randomWoord;
+}
+
+/*
+* functie om de legevakjes te printen voor het raden woord
+*/
+function printDeLegeVakjes() {
+        var vakjesHtml = '';
+        for (var i=0; i< teRadenWoord.length; i++) {
+                vakjesHtml += "<span class='raadme'>?<span class='ix'>" + i + "</span></span>";
+        }
+        $('#vakken').html(vakjesHtml);
+}
+
+function printHetAlfabet() {
+        var alfabetHtml = '';
+        for (var i=0; i< 26; i++) {
+                alfabetHtml += "<button onclick=raadLetter('"+ String.fromCharCode(i + 97) +"') class='letter' >"+ String.fromCharCode(i + 97) + "</button>";
+        }
+        $('#alfabet').html(alfabetHtml);
+}
+
+
+function raadLetter(letter) {
+        alert('Je denkt dat de letter '+ letter +' in het woord zit ?');
+}
+
+</script>
+</head>
+<body>
+<div class="wrapper">
+  <div class="header">
+    <p class="logo">JavaScript <i>&</i> jQuery <i class="mm">KW1C<br>ICT-academie</i></p>
+  </div>
+  <div class="content">
+    <div class="main">
+      <h1>Javascript Galgje</h1>
+          <canvas id="myCanvas"></canvas>
+          <p id="status"></p>
+          <p id="vakken"></p>
+          <p id="alfabet"></p>
+    </div>
+  </div>
+  <div class="footer">
+    <p>JavaScript &amp; jQuery, W. van Bijnen en A. Saebu, BOL 4 - opleiding tot Applicatie ontwikkelaar (2013).</p>
+  </div>
+</div>
+</body>
+</html>
