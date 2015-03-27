@@ -211,3 +211,63 @@ var woorden = ['campylobacteriose'
 ,'pensioenfondstoetredingsvoorwaarden'
 ,'zandzeepsodemineraalwatersteenstralen'
 ,'arbeidsongeschiktheidsverzekeringsformulier'];
+
+var stap = 0;
+$(document).ready(function() {
+        animatie();
+});
+
+// 2 hoofdvariabelen voor het hele spel
+// var teRadenWoord is het woord dat geraden moet worden dus bijvoobeeld 'fietspomp'
+// var geradenWoord is het woord waarin de geraden letters staan: bijvoorbeeld '..e..po.p';
+var teRadenWoord = "";
+var geradenWoordNu = "";
+/* 
+* Deze functie wordt aangeroepen als je op start spel klikt
+* Geen parameters of return waarde
+*/
+function galgje() {
+        alert('De functie galgje() wordt nu aangeroepen..');
+        
+        teRadenWoord = kiesRandomWoord();
+        alert( 'Een willekeurig woord is bijvoorbeeld ' + teRadenWoord );
+        
+        printDeLegeVakjes();
+        printHetAlfabet();
+        initialiseerSpel();
+}
+
+/*
+* Deze functie kiest voor jou een random/willekeurig woord uit de globale variabele woorden (zie galgje.js)
+* Geen parameters
+* @return een random woord 
+*/
+function kiesRandomWoord() {
+        var eengetal = Math.floor((Math.random()*woorden.length));
+        var randomWoord = woorden[eengetal];
+        return randomWoord;
+}
+
+/*
+* functie om de legevakjes te printen voor het raden woord
+*/
+function printDeLegeVakjes() {
+        var vakjesHtml = '';
+        for (var i=0; i< teRadenWoord.length; i++) {
+                vakjesHtml += "<span class='raadme'>?<span class='ix'>" + i + "</span></span>";
+        }
+        $('#vakken').html(vakjesHtml);
+}
+
+function printHetAlfabet() {
+        var alfabetHtml = '';
+        for (var i=0; i< 26; i++) {
+                alfabetHtml += "<button onclick=raadLetter('"+ String.fromCharCode(i + 97) +"') class='letter' >"+ String.fromCharCode(i + 97) + "</button>";
+        }
+        $('#alfabet').html(alfabetHtml);
+}
+
+
+function raadLetter(letter) {
+        alert('Je denkt dat de letter '+ letter +' in het woord zit ?');
+}
