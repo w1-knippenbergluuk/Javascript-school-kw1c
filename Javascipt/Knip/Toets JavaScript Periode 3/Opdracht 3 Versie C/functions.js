@@ -82,6 +82,11 @@ function puntenToevoegen() {
 	var getalElement = document.getElementById('puntenAantal');
     var puntenAantal = getalElement.value; 
 
-    // value van input pushen naar array
-		punten.push(puntenAantal);
+    // als de value van input iets bevat pushen naar array(anders niet)
+    if(puntenAantal == ''){
+        
+    }   else{
+        punten.push(puntenAantal);
+    }
+		
 }
