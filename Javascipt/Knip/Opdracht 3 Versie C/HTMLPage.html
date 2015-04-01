@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+      <!-- Toevoegen CSS-->  
+      <link href="_css/site.css" rel="stylesheet">
+      <!-- Toevoegen jQuery library-->
+      <script src="_js/jquery-1.7.2.min.js"></script>
+      <!-- Toevoegen JavaScript functies-->
+      <script src="functions.js"></script>
+      <meta charset="utf-8" />
+      <title>
+        Opdracht 3 - Toets JavaScript
+      </title>
+    </head>
+    <body onload="huidigePunten();">
+        <div class="wrapper">
+            <div class="header">
+                <p class="logo">JavaScript <i>&</i> jQuery <i class="mm">KW1C<br>ICT-academie</i></p>
+            </div>
+            <div class="content">
+                <div class="main">
+                  <h1>Toets - JavaScript Opdracht 3</h1>
+                  <h2>Gegooide punten bij darten</h2>
+                    <form id="order">
+                        <fieldset>
+                            <legend>Functies:</legend>
+                                <div>
+                                  <input type="button" name="button1" value="Huidige gegooide punten" onclick="huidigePunten();">
+                                  <input type="button" name="button2" value="Puntenaantal toevoegen" onclick="puntenToevoegen();">
+                                  <input type="button" name="button3" value="Aantal elementen in array" onclick="aantalPunten();">
+                                  <input type="button" name="button4" value="Hoogste aantal punten" onclick="hoogstePunten();">
+                                  <input type="button" name="button5" value="Laagste aantal punten" onclick="laagstePunten();">
+                                  <input type="button" name="button6" value="gemiddelde van de gegooide punten" onclick="gemiddeldePunten();">
+                                </div>
+                        </fieldset>
+                        <fieldset>
+                          <legend>Gegooide punten:</legend>
+                          <p id="puntenlijst"></p>
+                        </fieldset>
+                        <fieldset>
+                          <legend>Resultaat functie:</legend>
+                          <p id="resultaat"></p>
+                        </fieldset>
+                    </form>
+                </div>
+                <div class="footer">
+                    <p>JavaScript &amp; jQuery, W. van Bijnen, A. Saebu, R. Gijsbrechts BOL 4 - opleiding tot Applicatie ontwikkelaar (2013).</p>
+                </div>
+           </div>
+       </div> 
+    </body>
+</html>
