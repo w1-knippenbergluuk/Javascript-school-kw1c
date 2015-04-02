@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JavaScript &amp; jQuery</title>
+<link href="_css/site.css" rel="stylesheet">
+<script src="_js/jquery-1.7.2.min.js"></script>
+<script src="_js/site.js"></script>
+<script src="_js/jquery-ui-1.8.13.min.js"></script>
+<script>
+$(document).ready(function() {
+  $('#submit').attr("disabled","disabled");
+													 
+	var highlight = {
+		current: false
+	};
+	
+	$('#selectorList li').each(function(){
+		$(this).html('<a href="#">'+$(this).text()+'</a>');
+	});
+	
+	$('#selectorList li a').addClass('example').click(function(event) {
+		$('#selector').val($(this).text());
+		$('#apply').click();
+		event.stopPropagation();
+		return false;
+		
+	});
+	
+	$('#selectorList').hide();
+	
+	$('#apply').click(apply);
+	$('form').submit(apply);
+										
+   function apply() {
+		var selector = $('#selector').val();
+		clearPage();
+		if (selector == '') {
+			return false;
+		} else {
+			$('#jquerySelector').text(selector);
+			highlight.current = $(selector);
+			highlight.current.each(function() {
+				
+				var w=$(this).outerWidth();
+				var h=$(this).outerHeight();
+				
+				var t=$(this).offset().top;
+				var l=$(this).offset().left;
+				var overlay = $('<span class="highlighted"></span>');
+				overlay.width(w).height(h);
+				overlay.css({top:t,left:l});
+				overlay.appendTo('body');
+				overlay.animate({ backgroundColor: "red" }, 1000)
+			});
+		}
+		$('#numElems').text(highlight.current.length);
+		return false;
+	}
+	
+	$('#resetPage').click(function() {
+		resetPage();
+	});
+	
+	
+	
+	$(document).click(function(event) {
+		$('.highlighted').remove();
+		$('#selector')[0].focus();
+	});
+
+	
+	function clearPage() {
+		$('#jquerySelector').html('&nbsp;&nbsp;');
+		$('.highlighted').remove();
+		$('#numElems').html('&nbsp;');
+	}	
+	
+	function resetPage() {
+		$('#selector').val('');
+   		clearPage();
+	}
+	
+});
+</script>
+</head>
+
+<body>
+<div class="wrapper">
+  <div class="header">
+    <p class="logo">JavaScript <i>&</i> jQuery <i class="mm"><a href='http://www.kw1c.nl'>KW1C</a> college<br>
+     ICT academie</i></p>
+  </div>
+  <div class="content">
+    <div class="main">
+      <h1>jQuery Selector Test pagina</h1>
+      <div class="col1">
+		<p>Als je deze pagina in de inspector bekijkt zie je de opbouw van de pagina. Er zijn p, div, a elementen, maar ook headers h1, h2 en h3, lijsten ul en ol en verder ook formulier velden etc. Lees van te voren de reader goed en type alle selectoren in die er gevraagd worden.</p>
+        <p>Type hieronder je selector string in om te testen wat jQuery hiermee selecteert.</p>
+        <form name="form1" method="post" action="">
+          <div class="results">
+            <p>
+              <label><strong>Selector:</strong>
+                <input type="text" name="selector" id="selector">
+              </label>
+              <input type="submit" name="apply" id="apply" value="Voer uit">
+              <input type="reset" name="resetPage" id="resetPage" value="Reset">
+            </p>
+            <p><strong>jQuery code: </strong>$('<span id="jquerySelector">&nbsp;&nbsp;</span>')</p>
+            <p><strong>Aantal elementen gevonden:</strong> <span id="numElems"></span></p>
+          </div>
+          <h2 class="shadowLine">Dit is ook een header....</h2>
+          <ul id="lijstje" class="sideBySide">
+				<li>Dit doet niks</li>
+				<li ><a href="" class="main">Deze ook niet</a></li>
+          </ul>
+        </form>
+      </div>
+      <div class="col2">
+        <h2>Nog meer HTML om te selecteren</h2>
+        <h3>Header 3</h3>
+        <p>Quis nostrud exercitation ut labore et <strong>dolore magna aliqua.</strong> Sed do eiusmod tempor incididunt cupidatat non </p>
+        <h3>Heading 3</h3>
+        <p>Quis <em>nostrud exercitation ut labore et dolore magna</em> aliqua. Sed do eiusmod tempor incididunt cupidatat non </p>
+        <h2>Formulier Velden</h2>
+        <form action="" method="post" name="form2" id="test">
+          <p>
+            <label>
+              <input name="checkbox1" type="checkbox" id="checkbox1" value="check1">
+              Checkbox</label>
+            <br>
+            <label>
+              <input name="checkbox2" type="checkbox" id="checkbox2" value="check2" checked>
+              Checkbox2</label>
+          </p>
+          <p>
+            <label>
+              <input name="radio" type="radio" id="radio1" value="yes" checked>
+              Radio1</label>
+            <label> <br>
+              <input type="radio" name="radio" id="radio2" value="no">
+              Radio2</label>
+          </p>
+          <p>
+            <input type="submit" name="submit" id="submit" value="Submit" style="margin-left:0;">
+          </p>
+        </form>
+        <ul>
+          <li>Bulleted List Item 1</li>
+          <li>Bulleted List Item 2</li>
+        </ul>
+      </div>
+      <br class="clearLeft">
+    </div>
+  </div>
+  <div class="footer">
+    <p>JavaScript &amp; jQuery, W. van Bijnen en A.Saebu, <a href="http://www.s-hertogenbosch.nl">'s-Hertogenbosch</a> 2013.</p>
+  </div>
+</div>
+</body>
+</html>
