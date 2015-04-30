@@ -1,0 +1,20 @@
+body {
+}
+
+#lijst li {
+    width:  400px;
+}
+
+#lijst li span.waardering {
+    display: inline-block;
+    float:  right;
+}
+
+ol li{
+    
+    list-style-type: lower-greek;
+}
+
+#opdrachten .gedaan {
+    text-decoration:  line-through;
+}
