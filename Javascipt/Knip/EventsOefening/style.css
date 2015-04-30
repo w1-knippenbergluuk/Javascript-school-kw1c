@@ -18,3 +18,8 @@ ol li{
 #opdrachten .gedaan {
     text-decoration:  line-through;
 }
+
+#lijst li.overheen  {
+    color: #00ff90;
+}
+
