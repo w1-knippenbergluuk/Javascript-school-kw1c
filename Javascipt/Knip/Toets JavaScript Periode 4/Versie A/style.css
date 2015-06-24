@@ -1,0 +1,45 @@
+body 
+{
+    background-color: #121b3d; 
+    font-family: Arial; 
+    color: #fff;  
+}
+h1 
+{
+    color: #4464db;
+}
+h2 
+{
+    color: #324aa6;
+}
+h3 
+{
+    color: #24367b;
+}
+#succes 
+{   
+    font-size: 30px;
+    height: 100px;
+    width: 300px;   
+    background-color: #ff6a00;
+    margin: auto;  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.paragraph 
+{
+   font-family: 'Arial Rounded MT';
+   color: #fcc85d;
+}
+#succes.hover 
+{
+    color: orange;
+    background-color: #fcc85d;
+}
+.smile
+{
+    position: relative;
+    left: 0;
+    top: 0;
+}
